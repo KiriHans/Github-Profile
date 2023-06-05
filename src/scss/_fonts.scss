@@ -1,0 +1,21 @@
+@font-face {
+  font-family: "Poppins bold";
+  src: url(../assets/fonts/Poppins-Bold.ttf);
+}
+
+@font-face {
+  font-family: "Poppins semibold";
+  src: url(../assets/fonts/Poppins-SemiBold.ttf);
+}
+
+@font-face {
+  font-family: "Poppins medium";
+  src: url(../assets/fonts//Poppins-Medium.ttf);
+}
+
+@font-face {
+  font-family: "Poppins regular";
+  src: local("Roboto regular"), url(../assets/fonts/Poppins-Regular.ttf);
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap");

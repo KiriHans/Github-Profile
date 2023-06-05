@@ -1,0 +1,89 @@
+@import "functions";
+@import "mixins";
+@import "variables";
+
+header {
+  @include flex(row, center);
+
+  height: 5rem;
+  padding: 0%;
+
+  @include mobile {
+    height: 5rem;
+  }
+}
+
+.wrapper {
+  @include flex(row, space-between);
+  width: 100vw;
+  padding: 0 1.5rem;
+  background-color: colors("strong yellow");
+
+  span {
+    @include flex(row, space-between);
+    font-family: "Poppins bold";
+    align-items: center;
+    font-size: sizes("bold");
+    color: colors("black");
+    word-spacing: 10px;
+    letter-spacing: 1px;
+    padding: 5px 2rem;
+  }
+}
+
+nav {
+  display: block;
+  padding: 0px 2rem;
+  align-items: center;
+  margin: 6px 0;
+  transition: background-color 250ms ease-out, color 250ms ease-out;
+
+  a {
+    position: relative;
+    text-decoration: none;
+    font-size: 20px;
+    letter-spacing: 2px;
+    margin: 1px 1rem;
+    padding: 5px;
+    color: rgb(157, 47, 47);
+    transition: background-color 250ms ease-out, color 250ms ease-out;
+  }
+
+  a:hover {
+    color: rgb(143, 143, 143);
+    text-align: center;
+    cursor: pointer;
+  }
+
+  &:hover {
+    background-color: rgb(51, 5, 5);
+    color: rgb(143, 143, 143);
+  }
+}
+
+.menu {
+  @include flex(column, center);
+  flex: none;
+  align-items: center;
+  overflow-x: auto;
+  background-color: rgb(19, 19, 19);
+  display: flex;
+  align-items: center;
+}
+
+.menu-element {
+  background-color: rgb(23, 3, 3);
+  height: 1.5rem;
+  width: 70%;
+  padding: 1rem 1rem;
+  margin-top: 0.2rem;
+  font-size: sizes(bold);
+  font-weight: 400;
+  color: rgb(157, 47, 47);
+  margin: 1px solid rgb(19, 2, 2);
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  overflow-x: hidden;
+  white-space: nowrap;
+}

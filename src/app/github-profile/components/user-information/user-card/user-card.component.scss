@@ -1,0 +1,87 @@
+@import "functions";
+@import "mixins";
+@import "variables";
+
+.user-card {
+  @include flex(column, space-around);
+  padding: 1rem 2rem;
+  margin: 2rem 0.2rem 0;
+  width: 20vw;
+  border: 2px solid colors("light");
+  box-shadow: 0 0 10px 2px colors("light");
+  background-color: white;
+  max-width: 300px;
+
+  @include mobile {
+    width: 70vw;
+  }
+
+  a {
+    color: colors("strong yellow");
+    font-family: "Poppins semibold";
+    overflow: hidden;
+    text-align: center;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}
+
+.avatar {
+  @include flex(column, center);
+  align-items: center;
+  padding: 0.4rem 1rem 1rem;
+  img {
+    --size: 20vw;
+    --max-size: 300px;
+    height: var(--size);
+    width: var(--size);
+    border-radius: 100%;
+    max-width: var(--max-size);
+    max-height: var(--max-size);
+
+    @include mobile {
+      --size: 40vw;
+    }
+  }
+}
+
+.name {
+  font-family: "Poppins regular";
+  font-size: sizes("small");
+}
+
+.username {
+  font-family: "Poppins semibold";
+  font-size: sizes("semibold");
+}
+
+.metadata {
+  @include flex(row, flex-start);
+  padding-top: 0.5rem;
+  font-family: "Poppins regular";
+  font-size: sizes("regular");
+  align-items: center;
+  gap: 1rem;
+
+  span {
+    display: inline;
+    vertical-align: center;
+  }
+}
+
+.following,
+.company,
+.website,
+.location,
+.member-since,
+.link-profile,
+.number-stars,
+.number-repositories {
+  @include flex(row, left);
+  align-items: center;
+  gap: 0.3rem;
+  font-family: "Poppins regular";
+  font-size: sizes("regular");
+}

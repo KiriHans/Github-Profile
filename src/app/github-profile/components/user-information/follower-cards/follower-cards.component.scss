@@ -1,0 +1,76 @@
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
+:host {
+  display: flex;
+  flex-direction: column;
+  overflow-x: scroll;
+}
+h3 {
+  text-align: center;
+}
+
+section {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+
+  margin: 0 5rem;
+
+  overflow-x: scroll;
+}
+.follower-cards {
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: white;
+  border: 2px solid colors('light');
+  box-shadow: 0 0 10px 2px colors('light');
+
+  @include mobile {
+    width: 30vw;
+    min-width: 140px;
+  }
+}
+
+.avatar {
+  @include flex(column, center);
+  align-items: center;
+  padding: 0.4rem 1rem 1rem;
+  img {
+    --size: 8vw;
+    --max-size: 110px;
+    height: var(--size);
+    width: var(--size);
+    border-radius: 100%;
+
+    max-width: var(--max-size);
+    max-height: var(--max-size);
+
+    @include mobile {
+      height: 300px;
+      width: 300px;
+    }
+  }
+}
+
+.name {
+  text-align: center;
+  font-family: 'Poppins semibold';
+  font-size: sizes('semibold');
+  a {
+    color: colors('strong yellow');
+  }
+}
+
+.no-followers {
+  width: 12rem;
+  text-align: center;
+
+  margin: 1rem auto;
+  padding: 1rem;
+
+  background-color: white;
+  border: 2px solid colors('light');
+  box-shadow: 0 0 10px 2px colors('light');
+}

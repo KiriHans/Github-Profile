@@ -1,0 +1,20 @@
+@import "functions";
+@import "mixins";
+@import "variables";
+
+.content {
+  @include flex(column, flex-start);
+  position: relative;
+  align-items: center;
+  height: 100%;
+}
+
+app-header {
+  width: 100vw;
+}
+
+app-user-information {
+  @include flex(column, center);
+  align-items: center;
+  width: 100%;
+}

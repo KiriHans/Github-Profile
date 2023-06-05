@@ -1,0 +1,15 @@
+<h3>User's followers</h3>
+<section>
+  <div *ngFor="let follower of followers" class="follower-cards">
+    <div class="avatar">
+      <img [src]="follower.avatar_url" [alt]="follower.login + ' avatar'" />
+    </div>
+    <div class="name">
+      <a [href]="follower.html_url" target="_blank"> {{ follower.login }} </a>
+    </div>
+  </div>
+
+  <div *ngIf="followers.length === 0" class="no-followers">
+    I'm sorry, but this user doesn't have any followers
+  </div>
+</section>

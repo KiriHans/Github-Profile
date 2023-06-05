@@ -1,0 +1,84 @@
+@import 'functions';
+@import 'mixins';
+@import 'variables';
+
+h3 {
+  text-align: center;
+}
+
+.grid-repository {
+  display: grid;
+  gap: 1rem;
+  width: 33vw;
+  margin: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  max-width: 900px;
+
+  overflow-y: scroll;
+  height: 510px;
+  @include mobile {
+    width: 70vw;
+  }
+}
+
+.repository {
+  @include flex(column, space-around);
+  border: 2px solid #e6e6e6;
+  box-shadow: 0 0 10px 2px #e6e6e6;
+  padding: 0.2rem 0.5rem 0.7rem;
+  background-color: white;
+
+  min-height: 140px;
+}
+
+.name-repository {
+  font-family: 'Poppins semibold';
+  font-size: sizes('semibold');
+  margin-bottom: 0.6rem;
+  text-align: center;
+  color: colors('strong yellow');
+
+  a {
+    color: colors('strong yellow');
+    overflow: hidden;
+    text-align: center;
+
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    display: -webkit-box;
+    text-overflow: ellipsis;
+  }
+}
+
+.content {
+  @include flex(row, space-around);
+  align-items: center;
+  flex-wrap: wrap;
+}
+.number-stars,
+.number-forks,
+.number-watchers {
+  @include flex(row, flex-start);
+  align-items: center;
+  font-family: 'Poppins medium';
+  font-size: sizes('small');
+  gap: 0.3rem;
+
+  span {
+    text-align: left;
+  }
+}
+
+.no-repositories {
+  max-width: 460px;
+  width: 33vw;
+  text-align: center;
+
+  margin: 1rem auto;
+  padding: 1rem;
+
+  background-color: white;
+  border: 2px solid colors('light');
+  box-shadow: 0 0 10px 2px colors('light');
+}

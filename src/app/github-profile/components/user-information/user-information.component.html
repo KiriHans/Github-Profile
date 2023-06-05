@@ -1,0 +1,18 @@
+<app-search-user (search)="setData()" [isSearching]="isLoading"></app-search-user>
+
+<div class="result-search" *ngIf="!error && !isLoading && user && repository && followers">
+  <app-user-card [user]="user"></app-user-card>
+  <app-user-repository [repositories]="repository"></app-user-repository>
+  <app-follower-cards [followers]="followers"></app-follower-cards>
+</div>
+
+<p *ngIf="!error && !isLoading && !user">Nothing to see here yet</p>
+
+<div *ngIf="isLoading && !error" class="loading">Loading data...</div>
+
+<div *ngIf="error" class="alert">
+  <h3>Error:</h3>
+  <p>
+    {{ error.message }}
+  </p>
+</div>

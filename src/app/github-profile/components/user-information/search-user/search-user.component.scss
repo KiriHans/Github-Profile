@@ -1,0 +1,149 @@
+@import "functions";
+@import "mixins";
+@import "variables";
+
+.search-bar {
+  @include flex(column, center);
+
+  position: relative;
+  align-items: center;
+
+  margin: 0 auto;
+  padding: 2rem 0;
+
+  text-align: center;
+
+  background-color: colors("yellow");
+}
+
+label {
+  position: relative;
+  margin: 0 auto;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.search-field {
+  @include flex(row, center);
+
+  padding: 0.3rem 0.3rem 0.3rem 1rem;
+
+  align-items: center;
+
+  width: 30%;
+  background-color: white;
+
+  border: 2px solid colors("strong yellow");
+  border-radius: 2rem;
+
+  max-width: 900px;
+  transition: transform 400ms ease;
+
+  @include mobile {
+    width: 60%;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+input[type="text"] {
+  position: relative;
+
+  font-size: sizes("semibold");
+  color: colors("black");
+
+  outline: none;
+  width: 100%;
+  padding: 0.5rem 1rem;
+
+  background: transparent;
+  border: none;
+  @include mobile {
+    padding: 0.5rem 0;
+  }
+}
+
+button {
+  @include flex(row, center);
+  align-items: center;
+
+  font-size: inherit;
+  font-family: "Poppins bold";
+  color: inherit;
+
+  padding: 0.2rem 1.3rem 0.2rem 0.8rem;
+  background-color: colors("yellow");
+
+  border: none;
+  border-radius: 2rem;
+
+  transition: background 450ms ease, transform 300ms ease-in, color 300ms ease-in;
+  @include mobile {
+    overflow: hidden;
+    padding: 0.3rem 0.9rem;
+    font-size: 0;
+    border-radius: 100%;
+  }
+
+  &:hover {
+    background-color: colors("dark yellow");
+    cursor: pointer;
+    &:enabled {
+      color: colors("light");
+      transform: scale(1.02);
+    }
+  }
+
+  &:disabled {
+    background-color: colors("gray");
+    cursor: not-allowed;
+  }
+}
+
+.search-field:focus-within > button {
+  transform: scale(1.02);
+}
+
+.search-icon {
+  content: " ";
+  --size: 2rem;
+  align-items: center;
+  vertical-align: center;
+
+  height: var(--size);
+  width: var(--size);
+
+  margin: 0.2rem 0.2rem;
+}
+
+.autocomplete {
+  padding: 0.3rem 0.5rem;
+  position: absolute;
+  top: 80%;
+  align-items: center;
+
+  width: 30%;
+  background-color: white;
+
+  border: 2px solid colors("strong yellow");
+  border-radius: 2rem;
+  @include mobile {
+    width: 60%;
+  }
+
+  li {
+    font-size: sizes("semibold");
+    color: colors("black");
+
+    list-style: none;
+    padding: 0.5rem 0.3rem;
+    border-radius: 1rem;
+
+    &:hover {
+      background-color: colors("light");
+      cursor: pointer;
+    }
+  }
+}
