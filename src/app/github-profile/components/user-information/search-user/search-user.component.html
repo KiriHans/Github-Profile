@@ -2,7 +2,9 @@
   <label class="search-lbl" for="search">Search an user</label>
   <form [formGroup]="myForm" (ngSubmit)="setUserData(searchBar?.value)" class="search-field">
     <input (focus)="onSelected(true)" formControlName="searchBar" type="text" id="search" />
-    <button [disabled]="myForm.invalid || isSearching" type="submit"><img class="search-icon" src="/assets/icons/search-2.svg" />Search</button>
+    <button [disabled]="myForm.invalid || isSearching" type="submit">
+      <img class="search-icon" src="/assets/icons/search-2.svg" />Search
+    </button>
   </form>
   <div *ngIf="userList && userList.total_count !== 0 && isSelected" class="autocomplete">
     <li *ngFor="let user of userList.items.slice(0, 6)" (click)="selectSearchBarElement(user)">
