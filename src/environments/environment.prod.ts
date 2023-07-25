@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
   apiGithubUrl: 'https://api.github.com',
-  apiKey: 'Add your own API key',
+  apiKey: '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',
 };
